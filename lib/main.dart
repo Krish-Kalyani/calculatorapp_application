@@ -10,12 +10,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Calculator Base',
+      title: 'Calculator App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Calculator Home'),
+      home: const MyHomePage(title: 'Calculator App'),
     );
   }
 }
@@ -30,6 +30,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String _displayText = '0';
+  String _operand1 = '';
+  String _operand2 = '';
+  String _operator = '';
+
+  void _clear() {
+    setState(() {
+      _displayText = '0';
+      _operand1 = '';
+      _operand2 = '';
+      _operator = '';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
